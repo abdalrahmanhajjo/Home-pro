@@ -82,7 +82,9 @@
 */
 .works-artwork-col {
   position: relative;
-  overflow: visible;
+  /* hidden at mobile: clips the worker's blue bottom when it is pushed below
+     the col boundary via a negative `bottom` value */
+  overflow: hidden;
   width: 100%;
   max-width: 340px;
   aspect-ratio: 1 / 1.1;
@@ -90,15 +92,13 @@
   margin: 0 auto;
 }
 
-/*
-  xl (≥1280px): full-width flex container that centres the frame.
-  Matches Tailwind: w-full flex flex-col justify-center items-center h-[480px]
-*/
 @media (min-width: 1280px) {
   .works-artwork-col {
+    /* visible at xl: the worker must overflow 55 px to the left */
+    overflow: visible;
     max-width: none;
     width: 100%;
-    height: 480px;    /* xl:h-[480px] */
+    height: 480px;
     aspect-ratio: unset;
     margin: 0;
     display: flex;
@@ -194,34 +194,41 @@
   position: absolute;
   z-index: 10;
   pointer-events: none;
-  object-fit: contain;
-  width: 100%;        /* matches Tailwind mobile: width:100% */
-  height: auto;
+  /*
+    Positioned and sized like the frame (88% wide, 82% tall, bottom-right).
+    width: 94% extends 6% to the left of the frame for the arm-overflow look.
+    object-fit: cover  → scales to fill the area without distortion.
+    object-position: top center → shows the HEAD / upper body;
+      legs (and the blue splash) are cropped off at the bottom automatically.
+    Works for both full-body and pre-cropped worker images.
+  */
+  width: 94%;
+  height: 82%;
   bottom: 0;
-  left: -3%;          /* left:-3% */
+  right: 0;
+  left: auto;
+  top: auto;
+  object-fit: cover;
+  object-position: top center;
 }
 
-/*
-  xl: exact values from Tailwind inline style + className:
-  style={{ width:"515px", height:"423px" }}
-  className="absolute bottom-[15px] -left-[55px]"
-*/
 @media (min-width: 1280px) {
   .works-worker-overlay {
+    /* xl: exact Tailwind reference values, sibling to the frame */
     width: 515px;
     height: 423px;
     bottom: 15px;
     left: -55px;
+    right: auto;
+    top: auto;
+    object-fit: contain;
+    object-position: center;
+    clip-path: inset(0 0 9% 0);
   }
 }
 
 /* ─── Content outer col ────────────────────────────────────────── */
 
-/*
-  Tailwind: flex flex-col text-center items-center lg:text-left lg:items-start
-            xl:pl-6  w-full max-w-[660px] mx-auto xl:mx-0
-  → centre .how-content block below xl, left-align at xl.
-*/
 .how-content-outer {
   display: flex;
   justify-content: center; /* mx-auto equivalent for the inner block */
