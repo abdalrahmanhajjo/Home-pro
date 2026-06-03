@@ -128,8 +128,8 @@ export default function Reviews() {
           </div>
         </div>
 
-        {/* Dot pills — desktop only */}
-        <div className="rev-dots d-none d-lg-flex align-items-center justify-content-center">
+        {/* Dot pills */}
+        <div className="rev-dots d-flex align-items-center justify-content-center">
           {TESTIMONIALS.map((_, idx) => (
             <button
               key={idx}
@@ -140,20 +140,10 @@ export default function Reviews() {
           ))}
         </div>
 
-        {/* Mobile: [prev] [dots] [next] in one row — hidden on desktop */}
-        <div className="rev-mobile-row d-flex d-lg-none align-items-center justify-content-center">
+        {/* Mobile nav — hidden on desktop */}
+        <div className="rev-mobile-nav d-flex d-lg-none align-items-center justify-content-center">
           <NavButton direction="prev" onClick={handlePrev} disabled={isFirst} size="mobile" />
-          <div className="rev-dots-inline d-flex align-items-center">
-            {TESTIMONIALS.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveIndex(idx)}
-                className={`rev-dot ${idx === activeIndex ? "rev-dot--active" : ""}`}
-                aria-label={`Go to review ${idx + 1}`}
-              />
-            ))}
-          </div>
-          <NavButton direction="next" onClick={handleNext} disabled={isLast} size="mobile" />
+          <NavButton direction="next" onClick={handleNext} disabled={isLast}  size="mobile" />
         </div>
 
       </div>

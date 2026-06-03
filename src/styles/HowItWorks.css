@@ -82,9 +82,7 @@
 */
 .works-artwork-col {
   position: relative;
-  /* hidden at mobile: clips the worker's blue bottom when it is pushed below
-     the col boundary via a negative `bottom` value */
-  overflow: hidden;
+  overflow: visible; /* arm must extend left of the frame freely */
   width: 100%;
   max-width: 340px;
   aspect-ratio: 1 / 1.1;
@@ -124,9 +122,11 @@
   border-radius: 24px;
   border-top-right-radius: 96px;
   overflow: hidden;
-  background: #f8fafc;                               /* bg-slate-50 */
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);      /* shadow-sm   */
-  z-index: 0;
+  background: #f8fafc;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  /* no z-index here — keeping z-index:auto prevents the frame from
+     creating its own stacking context, so the badge (z-index:20 inside)
+     paints above the worker (z-index:10 sibling) as intended */
 }
 
 /*
@@ -163,7 +163,7 @@
 .works-badge-wrap {
   position: absolute;
   top: 28%;           /* top-[28%] */
-  right: 60px;        /* right-[60px] */
+  right: 30px;
   width: 80px;        /* w-[80px] */
   height: 80px;       /* h-[80px] */
   z-index: 20;
@@ -194,35 +194,30 @@
   position: absolute;
   z-index: 10;
   pointer-events: none;
+  object-fit: contain;
   /*
-    Positioned and sized like the frame (88% wide, 82% tall, bottom-right).
-    width: 94% extends 6% to the left of the frame for the arm-overflow look.
-    object-fit: cover  → scales to fill the area without distortion.
-    object-position: top center → shows the HEAD / upper body;
-      legs (and the blue splash) are cropped off at the bottom automatically.
-    Works for both full-body and pre-cropped worker images.
+    Exact Tailwind mobile values:  width:100%  bottom:0  left:-3%
+    The arm extends naturally to the left (overflow:visible on parent).
+    clip-path trims only the thin blue splash at the bottom of Worker.png
+    (~6% = ~17 px at mobile) without visually "cutting" the body.
   */
-  width: 94%;
-  height: 82%;
-  bottom: 0;
-  right: 0;
-  left: auto;
+  width: 100%;
+  height: auto;
+  bottom: -5%;
+  left: -3%;
+  right: auto;
   top: auto;
-  object-fit: cover;
-  object-position: top center;
+  clip-path: inset(0 0 6% 0);
 }
 
 @media (min-width: 1280px) {
   .works-worker-overlay {
-    /* xl: exact Tailwind reference values, sibling to the frame */
     width: 515px;
     height: 423px;
-    bottom: 15px;
+    bottom: -32px;
     left: -55px;
     right: auto;
     top: auto;
-    object-fit: contain;
-    object-position: center;
     clip-path: inset(0 0 9% 0);
   }
 }

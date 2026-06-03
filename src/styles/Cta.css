@@ -72,8 +72,9 @@
 
   .cta-notch {
     top: 0;
-    left: 64px;
+    left: 50%;
     right: auto;
+    transform: translateX(-50%);
     width: 244px;
     height: 22px;
     background: #fff;
@@ -188,7 +189,7 @@
   }
 
   .cta-notch {
-    left: 64px;
+    left: 50%;
     width: 244px;
   }
 

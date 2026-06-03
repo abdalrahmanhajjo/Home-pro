@@ -157,10 +157,10 @@
   }
 }
 
-/* Mobile buttons — smaller to fit neatly alongside the dots */
+/* Mobile buttons: always visible (parent hides on lg+) */
 .rev-nav-btn--mobile {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 
 .rev-nav-btn--active {
@@ -185,8 +185,8 @@
 }
 
 .rev-nav-btn--mobile .rev-nav-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 }
 
 /* ─── Author ───────────────────────────────────────────────────── */
@@ -268,14 +268,10 @@
   background: #cbd5e1;
 }
 
-/* ─── Mobile Row: [prev] [dots] [next] ─────────────────────────── */
+/* ─── Mobile Nav ───────────────────────────────────────────────── */
 
-.rev-mobile-row {
-  gap: 0.75rem;   /* space between each button and the dot cluster */
-}
-
-.rev-dots-inline {
-  gap: 0.5rem;    /* same gap as desktop dot row */
+.rev-mobile-nav {
+  gap: 1.5rem;           /* gap-6 */
 }
 
 /* ─── Slide-in Fade Animation ──────────────────────────────────── */
