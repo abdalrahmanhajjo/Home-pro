@@ -1,0 +1,176 @@
+/* Navbar section styles */
+
+.site-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  min-height: 80px;
+  padding: 0;
+  background: var(--dark-blue);
+}
+
+.site-navbar .container-xxl,
+.nav-shell {
+  max-width: 1538px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff !important;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.brand-logo {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.brand-icon {
+  color: var(--primary-blue);
+  font-size: 22px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 15px;
+  font-weight: 800;
+  padding-inline: 10px;
+  white-space: nowrap;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+.service-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.service-status span,
+.mobile-service-status span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent-red);
+}
+
+.mobile-menu-btn {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 24px;
+}
+
+.offcanvas-backdrop.show {
+  opacity: 0.52;
+}
+
+.mobile-sidebar {
+  width: 273px !important;
+  background: var(--dark-blue);
+  color: #fff;
+  border-left: 0;
+}
+
+.mobile-sidebar .offcanvas-header {
+  height: 57px;
+  padding: 0 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.mobile-sidebar .brand {
+  font-size: 25px;
+}
+
+.mobile-close {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 27px;
+  line-height: 1;
+}
+
+.mobile-sidebar .offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.mobile-nav-list {
+  display: grid;
+  gap: 44px;
+  margin: 35px 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.mobile-nav-list a {
+  color: #fff;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.mobile-service-status {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: auto 0 34px 42px;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.mobile-service-status span {
+  width: 12px;
+  height: 12px;
+}
+
+@media (max-width: 767.98px) {
+.site-navbar {
+    min-height: 57px;
+  }
+.site-navbar .container-xxl,
+  .nav-shell {
+    min-height: 57px;
+    padding-inline: 30px 24px;
+  }
+.site-navbar .brand {
+    font-size: 0;
+  }
+.site-navbar .brand::after {
+    content: "HomePro";
+    color: #fff;
+    font-size: 25px;
+    font-weight: 800;
+  }
+.site-navbar .brand-icon {
+    font-size: 21px;
+  }
+}

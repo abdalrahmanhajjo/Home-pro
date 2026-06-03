@@ -1,0 +1,114 @@
+/* About section styles */
+
+.about-section {
+  padding-top: clamp(90px, 12vw, 235px);
+}
+
+.check-list {
+  color: var(--dark-blue);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.check-list i {
+  margin-right: 10px;
+  color: var(--dark-blue);
+}
+
+.contact-alert {
+  display: inline-block;
+  max-width: 620px;
+  padding: 16px 32px;
+  border-radius: 20px;
+  background: var(--primary-blue);
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.contact-alert a {
+  color: #fff;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.roof-shape {
+  width: min(716px, 100%);
+  aspect-ratio: 716 / 710;
+  overflow: hidden;
+  background: #d7f0ff;
+  clip-path: polygon(50% 0, 100% 24%, 100% 100%, 0 100%, 0 24%);
+}
+
+.roof-shape img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 767.98px) {
+.about-section {
+    padding: 72px 0 80px;
+  }
+.about-section .container-xxl {
+    max-width: 375px;
+    padding-inline: 24px;
+  }
+.roof-shape {
+    width: 327px;
+    height: 319px;
+    margin-inline: auto;
+    aspect-ratio: auto;
+    border-radius: 0;
+    clip-path: polygon(50% 0, 100% 26%, 100% 100%, 0 100%, 0 26%);
+  }
+.roof-shape img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+.about-section .section-title {
+    margin-top: 5px;
+    font-size: 24px;
+    line-height: 1.35;
+    letter-spacing: -0.4px;
+  }
+.about-section .section-text {
+    margin-top: 15px !important;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+.check-list {
+    margin-top: 34px !important;
+    row-gap: 25px !important;
+    color: var(--dark-blue);
+    font-size: 15px;
+    line-height: 1;
+  }
+.check-list > div {
+    width: 100%;
+  }
+.check-list i {
+    margin-right: 13px;
+    font-size: 12px;
+  }
+.contact-alert {
+    width: 100%;
+    margin-top: 33px !important;
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 374px) {
+.about-section .container-xxl {
+    padding-inline: 20px;
+  }
+.roof-shape {
+    width: 100%;
+    height: 310px;
+  }
+}

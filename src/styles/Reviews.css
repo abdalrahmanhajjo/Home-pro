@@ -1,0 +1,292 @@
+/* ─── Section ──────────────────────────────────────────────────── */
+
+.rev-section {
+  background: #fff;
+  padding-top: 3rem;      /* py-12 */
+  padding-bottom: 3rem;
+  padding-left: 1.5rem;   /* px-6  */
+  padding-right: 1.5rem;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .rev-section {
+    padding-left: 3rem;   /* md:px-12 */
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rev-section {
+    padding-top: 5rem;    /* lg:py-20 */
+    padding-bottom: 5rem;
+    padding-left: 5rem;   /* lg:px-20 */
+    padding-right: 5rem;
+  }
+}
+
+.rev-inner {
+  max-width: 1050px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ─── Heading ──────────────────────────────────────────────────── */
+
+.rev-heading {
+  font-size: 1.625rem;   /* text-[26px] */
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  max-width: 700px;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+@media (min-width: 640px) {
+  .rev-heading {
+    font-size: 1.875rem;  /* sm:text-[30px] */
+  }
+}
+
+@media (min-width: 768px) {
+  .rev-heading {
+    font-size: 2.25rem;   /* md:text-[36px] */
+  }
+}
+
+@media (min-width: 1024px) {
+  .rev-heading {
+    font-size: 2.875rem;  /* lg:text-[46px] */
+    line-height: 1.13;
+    margin-bottom: 2rem;  /* lg:mb-8 */
+  }
+}
+
+/* ─── Trustpilot Logo ──────────────────────────────────────────── */
+
+.rev-logo-wrap {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.rev-logo {
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ─── Desktop Gradient Divider ─────────────────────────────────── */
+
+.rev-divider {
+  width: 100%;
+  max-width: 780px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(148, 163, 184, 0.8), transparent);
+  margin-bottom: 2rem;   /* mb-8 */
+}
+
+/* ─── Carousel Row ─────────────────────────────────────────────── */
+
+.rev-carousel-row {
+  gap: 1rem;             /* gap-4 */
+  min-height: 140px;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+@media (min-width: 768px) {
+  .rev-carousel-row {
+    gap: 2rem;           /* md:gap-8 */
+  }
+}
+
+/* ─── Review Text ──────────────────────────────────────────────── */
+
+.rev-text-wrap {
+  max-width: 680px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.rev-text {
+  color: rgba(100, 116, 139, 0.9); /* text-slate-500/90 */
+  font-size: 0.90625rem;            /* text-[14.5px] */
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .rev-text {
+    font-size: 0.96875rem;  /* md:text-[15.5px] */
+    line-height: 1.625;
+  }
+}
+
+/* ─── Nav Buttons ──────────────────────────────────────────────── */
+
+.rev-nav-btn {
+  border: none;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.rev-nav-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+/* Desktop buttons: shown only on lg+ */
+.rev-nav-btn--desktop {
+  width: 44px;    /* w-11 */
+  height: 44px;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .rev-nav-btn--desktop {
+    display: inline-flex;
+  }
+}
+
+/* Mobile buttons: always visible (parent hides on lg+) */
+.rev-nav-btn--mobile {
+  width: 50px;
+  height: 50px;
+}
+
+.rev-nav-btn--active {
+  background: #00a3e0;
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.rev-nav-btn--active:hover {
+  background: #0089be;
+}
+
+.rev-nav-btn--disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.rev-nav-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.rev-nav-btn--mobile .rev-nav-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ─── Author ───────────────────────────────────────────────────── */
+
+.rev-author {
+  gap: 0.875rem;         /* gap-3.5 */
+  margin-bottom: 2rem;   /* mb-8 */
+}
+
+@media (min-width: 1024px) {
+  .rev-author {
+    margin-bottom: 2.5rem; /* lg:mb-10 */
+  }
+}
+
+.rev-avatar-wrap {
+  width: 56px;   /* w-14 */
+  height: 56px;  /* h-14 */
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 1px solid #f1f5f9; /* border-slate-100 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.rev-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rev-author-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+/* ─── Star Rating ──────────────────────────────────────────────── */
+
+.rev-stars {
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.rev-star {
+  width: 19px;
+  height: 19px;
+}
+
+.rev-star--on  { color: #ffb500; }
+.rev-star--off { color: #e2e8f0; }
+
+/* ─── Dot Pills ────────────────────────────────────────────────── */
+
+.rev-dots {
+  gap: 0.5rem;           /* gap-2 */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.rev-dot {
+  height: 8px;           /* h-2 */
+  width: 8px;            /* w-2 */
+  border-radius: 9999px;
+  border: none;
+  background: #e2e8f0;
+  padding: 0;
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.rev-dot--active {
+  width: 28px;           /* w-7 */
+  background: #00a3e0;
+}
+
+.rev-dot:not(.rev-dot--active):hover {
+  background: #cbd5e1;
+}
+
+/* ─── Mobile Nav ───────────────────────────────────────────────── */
+
+.rev-mobile-nav {
+  gap: 1.5rem;           /* gap-6 */
+}
+
+/* ─── Slide-in Fade Animation ──────────────────────────────────── */
+
+@keyframes rev-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-fade {
+  animation: rev-fade-in 0.35s ease both;
+}

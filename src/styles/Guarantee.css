@@ -1,0 +1,117 @@
+/* Guarantee section styles */
+
+.guarantee-section {
+  padding: 0 60px clamp(80px, 8vw, 160px);
+}
+
+.guarantee-box {
+  position: relative;
+  max-width: 1780px;
+  margin-inline: auto;
+  padding: clamp(44px, 5vw, 75px) clamp(26px, 9vw, 180px);
+  border-radius: 22px;
+  background: var(--dark-blue);
+  color: #fff;
+}
+
+.guarantee-box::before,
+.guarantee-box::after {
+  content: "";
+  position: absolute;
+  top: 130px;
+  width: 32px;
+  height: 350px;
+  background: #fff;
+}
+
+.guarantee-box::before {
+  left: 0;
+  clip-path: polygon(0 0, 100% 35px, 100% calc(100% - 35px), 0 100%);
+}
+
+.guarantee-box::after {
+  right: 0;
+  clip-path: polygon(100% 0, 0 35px, 0 calc(100% - 35px), 100% 100%);
+}
+
+.guarantee-intro,
+.benefit p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+.benefit {
+  display: grid;
+  grid-template-columns: 95px 1fr;
+  gap: 28px;
+}
+
+.benefit span {
+  color: var(--icon-gray);
+  font-size: 70px;
+  line-height: 1;
+}
+
+.benefit h3 {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.cal-clock {
+  position: relative;
+  display: inline-block;
+}
+
+.cal-clock .fa-clock {
+  position: absolute;
+  right: -0.16em;
+  bottom: -0.06em;
+  border-radius: 50%;
+  background: var(--dark-blue);
+  font-size: 0.5em;
+  box-shadow: 0 0 0 2px var(--dark-blue);
+}
+
+@media (max-width: 1199.98px) {
+.guarantee-box::before,
+  .guarantee-box::after {
+    display: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+.benefit {
+    grid-template-columns: 62px 1fr;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 767.98px) {
+.guarantee-section {
+    padding-inline: 22px;
+  }
+.benefit {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+.benefit span {
+    font-size: 46px;
+  }
+.guarantee-box .row {
+    text-align: center;
+  }
+.guarantee-box .border-bottom {
+    border-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+.guarantee-intro {
+    margin-top: 14px;
+  }
+.guarantee-box .row.g-5 {
+    row-gap: 56px !important;
+  }
+}

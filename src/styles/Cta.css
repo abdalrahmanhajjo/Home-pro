@@ -1,0 +1,207 @@
+/* Cta section styles */
+
+.cta-section {
+  background: var(--dark-blue);
+}
+
+.cta-notch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 68px;
+  background: #fff;
+  clip-path: polygon(
+    0 0,
+    12% 0,
+    14% 100%,
+    39% 100%,
+    41% 0,
+    100% 0,
+    100% 0,
+    0 0
+  );
+  z-index: 3;
+}
+
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 748px;
+  z-index: 2;
+}
+
+.cta-content h2 {
+  font-size: clamp(2.2rem, 5vw, 3.875rem);
+  font-weight: 800;
+  line-height: 1.17;
+  letter-spacing: -1.5px;
+}
+
+.cta-checks {
+  color: var(--primary-blue);
+}
+
+.cta-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  width: min(966px, 56%);
+  max-width: none;
+  z-index: 1;
+}
+
+/* Medium desktop */
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .cta-image {
+    width: 680px;
+    height: auto;
+    opacity: 0.5;
+  }
+}
+
+/* Tablet, phones, and all smaller devices */
+@media (max-width: 991.98px) {
+  .cta-section {
+    min-height: 628px;
+    background: var(--dark-blue);
+    overflow: hidden;
+  }
+
+  .cta-notch {
+    top: 0;
+    left: 64px;
+    right: auto;
+    width: 244px;
+    height: 22px;
+    background: #fff;
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%);
+  }
+
+  .cta-content {
+    min-height: auto;
+    padding: 62px 14px 0;
+    text-align: center;
+    justify-content: flex-start;
+  }
+
+  .cta-content .row {
+    margin: 0;
+    justify-content: center;
+  }
+
+  .cta-content .col-lg-7 {
+    width: 100%;
+    padding: 0;
+  }
+
+  .cta-content h2 {
+    max-width: 330px;
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 1.32;
+    letter-spacing: -0.3px;
+    font-weight: 800;
+  }
+
+  .cta-checks {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center;
+    align-items: center;
+    gap: 22px !important;
+    margin-top: 27px !important;
+    color: var(--primary-blue);
+    font-size: 16px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .cta-checks span {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .cta-checks i {
+    font-size: 16px;
+  }
+
+  .pill-button {
+    height: 50px;
+    min-width: 174px;
+    margin-top: 27px !important;
+    padding: 0 7px 0 20px;
+    border-radius: 999px;
+    font-size: 18px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .pill-button span {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--primary-blue);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+  }
+
+  .cta-image {
+    display: block !important;
+    content: url("/images/cta-worker-house-phone.png");
+    position: absolute;
+    width: 392px;
+    max-width: none;
+    height: auto;
+    left: 50%;
+    right: auto;
+    bottom: 0;
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+}
+
+/* Bigger phones and tablets */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .cta-section {
+    min-height: 720px;
+  }
+
+  .cta-image {
+    width: 470px;
+  }
+  
+}
+
+/* Small phones */
+@media (max-width: 374.98px) {
+  .cta-section {
+    min-height: 628px;
+  }
+
+  .cta-notch {
+    left: 64px;
+    width: 244px;
+  }
+
+  .cta-content h2 {
+    font-size: 23px;
+  }
+
+  .cta-checks {
+    gap: 16px !important;
+    font-size: 15px;
+  }
+
+  .cta-image {
+    width: 382px;
+  }
+}

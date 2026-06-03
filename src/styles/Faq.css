@@ -1,0 +1,252 @@
+/* ─── Section ──────────────────────────────────────────────────── */
+
+.faq-section {
+  background: #fff;
+  padding-top: 4rem;      /* py-16 */
+  padding-bottom: 4rem;
+  padding-left: 1.25rem;  /* px-5 */
+  padding-right: 1.25rem;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -4px;    /* mb-[-4px] — sits flush on the next section */
+  user-select: none;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .faq-section {
+    padding-left: 2rem;   /* sm:px-8 */
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .faq-section {
+    padding-top: 5rem;    /* md:py-20 */
+    padding-bottom: 5rem;
+    padding-left: 3rem;   /* md:px-12 */
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .faq-section {
+    padding-top: 6rem;    /* lg:py-24 */
+    padding-bottom: 6rem;
+    padding-left: 4rem;   /* lg:px-16 */
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .faq-section {
+    padding-left: 6rem;   /* xl:px-24 */
+    padding-right: 6rem;
+  }
+}
+
+.faq-inner {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ─── Heading Column ───────────────────────────────────────────── */
+
+.faq-heading-col {
+  margin-bottom: 2.5rem;  /* gap-10 when stacked */
+}
+
+@media (min-width: 768px) {
+  .faq-heading-col {
+    margin-bottom: 3rem;  /* md:gap-12 */
+  }
+}
+
+@media (min-width: 992px) {
+  .faq-heading-col {
+    margin-bottom: 0;
+    padding-right: 4rem;  /* lg:gap-16 → right padding creates the column gap */
+  }
+}
+
+.faq-title {
+  font-size: 1.625rem;    /* text-[26px] */
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;    /* mb-4 */
+}
+
+@media (min-width: 640px) {
+  .faq-title { font-size: 1.875rem; }       /* sm:text-[30px] */
+}
+
+@media (min-width: 768px) {
+  .faq-title {
+    font-size: 2.25rem;   /* md:text-[36px] */
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .faq-title { font-size: 3rem; }           /* lg:text-[48px] */
+}
+
+.faq-help {
+  color: #475569;         /* text-slate-600 */
+  font-size: 0.875rem;   /* text-sm */
+}
+
+@media (min-width: 768px) {
+  .faq-help { font-size: 0.9375rem; }       /* md:text-[15px] */
+}
+
+.faq-help-link {
+  color: #00a3e0;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+.faq-help-link:hover { color: #0089be; }
+
+/* ─── Accordion List ───────────────────────────────────────────── */
+
+.faq-list {
+  gap: 0.75rem;           /* gap-3 */
+}
+
+/* ─── Individual Item ──────────────────────────────────────────── */
+
+.faq-item {
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+/* Open: filled background + rounded corners */
+.faq-item--open {
+  background: #f1f5f9;    /* bg-[#F1F5F9] */
+  border-radius: 1rem;    /* rounded-2xl */
+  padding: 1.25rem 1rem;  /* py-5 px-4 */
+}
+
+/* Closed: white + bottom border only */
+.faq-item--closed {
+  background: #fff;
+  border-radius: 0;
+  padding: 1rem;          /* py-4 px-4 */
+  border-bottom: 1px solid #f1f5f9; /* border-b border-slate-100 */
+}
+
+@media (min-width: 640px) {
+  .faq-item--open   { padding: 1.5rem; }
+  .faq-item--closed { padding: 1.25rem 1.5rem; }
+}
+
+/* ─── Toggle Button ────────────────────────────────────────────── */
+
+.faq-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  gap: 0.75rem;           /* gap-3 */
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.faq-btn:focus-visible {
+  outline: 2px solid rgba(125, 211, 252, 0.4);
+  outline-offset: 2px;
+}
+
+/* ─── Question Text ────────────────────────────────────────────── */
+
+.faq-question {
+  font-size: 0.9375rem;   /* text-[15px] */
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: -0.025em;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .faq-question { font-size: 1rem; }        /* sm:text-base */
+}
+
+@media (min-width: 768px) {
+  .faq-question { font-size: 1.0625rem; }   /* md:text-[17px] */
+}
+
+/* Open item: question always blue */
+.faq-question--open { color: #00a3e0; }
+
+/* Closed item: question turns blue on hover */
+.faq-btn:hover .faq-question:not(.faq-question--open) { color: #00a3e0; }
+
+/* ─── Chevron Icon ─────────────────────────────────────────────── */
+
+.faq-chevron {
+  flex-shrink: 0;
+  color: #1e293b;
+  transition: transform 0.3s ease, color 0.3s ease;
+  line-height: 0;
+}
+
+.faq-chevron svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .faq-chevron svg { width: 18px; height: 18px; }
+}
+
+/* Rotated + blue when item is open */
+.faq-chevron--open {
+  transform: rotate(180deg);
+  color: #1d4ed8;
+}
+
+/* ─── Answer — CSS grid height trick ───────────────────────────── */
+/* grid-rows: 0fr → 1fr collapses / expands without fixed heights */
+
+.faq-answer {
+  display: grid;
+  overflow: hidden;
+  transition: grid-template-rows 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+.faq-answer--open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: 0.75rem;   /* mt-3 */
+}
+
+.faq-answer--closed {
+  grid-template-rows: 0fr;
+  opacity: 0;
+  margin-top: 0;
+}
+
+/* Required inner wrapper — overflow:hidden clamps the height to 0 */
+.faq-answer-inner { overflow: hidden; }
+
+.faq-answer-text {
+  color: #64748b;         /* text-slate-500 */
+  font-size: 0.8125rem;  /* text-[13px] */
+  line-height: 1.625;
+  max-width: 640px;
+}
+
+@media (min-width: 640px) {
+  .faq-answer-text { font-size: 0.84375rem; } /* sm:text-[13.5px] */
+}
+
+@media (min-width: 768px) {
+  .faq-answer-text { font-size: 0.90625rem; } /* md:text-[14.5px] */
+}
