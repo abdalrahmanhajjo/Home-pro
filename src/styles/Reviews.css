@@ -2,9 +2,9 @@
 
 .rev-section {
   background: #fff;
-  padding-top: 3rem;      /* py-12 */
+  padding-top: 3rem;
   padding-bottom: 3rem;
-  padding-left: 1.5rem;   /* px-6  */
+  padding-left: 1.5rem;
   padding-right: 1.5rem;
   width: 100%;
   overflow: hidden;
@@ -13,16 +13,16 @@
 
 @media (min-width: 768px) {
   .rev-section {
-    padding-left: 3rem;   /* md:px-12 */
+    padding-left: 3rem;
     padding-right: 3rem;
   }
 }
 
 @media (min-width: 1024px) {
   .rev-section {
-    padding-top: 5rem;    /* lg:py-20 */
+    padding-top: 5rem;
     padding-bottom: 5rem;
-    padding-left: 5rem;   /* lg:px-20 */
+    padding-left: 5rem;
     padding-right: 5rem;
   }
 }
@@ -36,32 +36,32 @@
 /* ─── Heading ──────────────────────────────────────────────────── */
 
 .rev-heading {
-  font-size: 1.625rem;   /* text-[26px] */
+  font-size: 1.625rem;
   font-weight: 700;
   color: #1e293b;
   line-height: 1.25;
   letter-spacing: -0.025em;
   max-width: 700px;
-  margin-bottom: 1.5rem; /* mb-6 */
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 640px) {
   .rev-heading {
-    font-size: 1.875rem;  /* sm:text-[30px] */
+    font-size: 1.875rem;
   }
 }
 
 @media (min-width: 768px) {
   .rev-heading {
-    font-size: 2.25rem;   /* md:text-[36px] */
+    font-size: 2.25rem;
   }
 }
 
 @media (min-width: 1024px) {
   .rev-heading {
-    font-size: 2.875rem;  /* lg:text-[46px] */
+    font-size: 2.875rem;
     line-height: 1.13;
-    margin-bottom: 2rem;  /* lg:mb-8 */
+    margin-bottom: 2rem;
   }
 }
 
@@ -72,7 +72,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem; /* mb-6 */
+  margin-bottom: 1.5rem;
 }
 
 .rev-logo {
@@ -86,21 +86,26 @@
   width: 100%;
   max-width: 780px;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(148, 163, 184, 0.8), transparent);
-  margin-bottom: 2rem;   /* mb-8 */
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(148, 163, 184, 0.8),
+    transparent
+  );
+  margin-bottom: 2rem;
 }
 
 /* ─── Carousel Row ─────────────────────────────────────────────── */
 
 .rev-carousel-row {
-  gap: 1rem;             /* gap-4 */
+  gap: 1rem;
   min-height: 140px;
-  margin-bottom: 1.5rem; /* mb-6 */
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 768px) {
   .rev-carousel-row {
-    gap: 2rem;           /* md:gap-8 */
+    gap: 2rem;
   }
 }
 
@@ -113,8 +118,8 @@
 }
 
 .rev-text {
-  color: rgba(100, 116, 139, 0.9); /* text-slate-500/90 */
-  font-size: 0.90625rem;            /* text-[14.5px] */
+  color: rgba(100, 116, 139, 0.9);
+  font-size: 0.90625rem;
   line-height: 1.5;
   font-weight: 400;
   text-align: center;
@@ -122,7 +127,7 @@
 
 @media (min-width: 768px) {
   .rev-text {
-    font-size: 0.96875rem;  /* md:text-[15.5px] */
+    font-size: 0.96875rem;
     line-height: 1.625;
   }
 }
@@ -137,6 +142,7 @@
   justify-content: center;
   flex-shrink: 0;
   cursor: pointer;
+  padding: 0;
   transition: background-color 0.15s ease, transform 0.1s ease;
 }
 
@@ -144,9 +150,9 @@
   transform: scale(0.95);
 }
 
-/* Desktop buttons: shown only on lg+ */
+/* Desktop buttons */
 .rev-nav-btn--desktop {
-  width: 44px;    /* w-11 */
+  width: 44px;
   height: 44px;
   display: none;
 }
@@ -157,25 +163,25 @@
   }
 }
 
-/* Mobile buttons: always visible (parent hides on lg+) */
+/* Mobile buttons - bigger bottom swiping */
 .rev-nav-btn--mobile {
-  width: 50px;
-  height: 50px;
+  width: 34px;
+  height: 34px;
 }
 
 .rev-nav-btn--active {
-  background: #00a3e0;
+  background: #14aee8;
   color: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
 
 .rev-nav-btn--active:hover {
-  background: #0089be;
+  background: #0ea5dd;
 }
 
 .rev-nav-btn--disabled {
-  background: #e2e8f0;
-  color: #94a3b8;
+  background: #e9edf5;
+  color: #ffffff;
   cursor: not-allowed;
 }
 
@@ -185,29 +191,29 @@
 }
 
 .rev-nav-btn--mobile .rev-nav-icon {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 
 /* ─── Author ───────────────────────────────────────────────────── */
 
 .rev-author {
-  gap: 0.875rem;         /* gap-3.5 */
-  margin-bottom: 2rem;   /* mb-8 */
+  gap: 0.875rem;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 1024px) {
   .rev-author {
-    margin-bottom: 2.5rem; /* lg:mb-10 */
+    margin-bottom: 2.5rem;
   }
 }
 
 .rev-avatar-wrap {
-  width: 56px;   /* w-14 */
-  height: 56px;  /* h-14 */
+  width: 56px;
+  height: 56px;
   border-radius: 9999px;
   overflow: hidden;
-  border: 1px solid #f1f5f9; /* border-slate-100 */
+  border: 1px solid #f1f5f9;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
 }
@@ -238,30 +244,38 @@
   height: 19px;
 }
 
-.rev-star--on  { color: #ffb500; }
-.rev-star--off { color: #e2e8f0; }
+.rev-star--on {
+  color: #ffb500;
+}
+
+.rev-star--off {
+  color: #e2e8f0;
+}
 
 /* ─── Dot Pills ────────────────────────────────────────────────── */
 
 .rev-dots {
-  gap: 0.5rem;           /* gap-2 */
-  margin-bottom: 1.5rem; /* mb-6 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
 }
 
 .rev-dot {
-  height: 8px;           /* h-2 */
-  width: 8px;            /* w-2 */
+  height: 7px;
+  width: 7px;
   border-radius: 9999px;
   border: none;
-  background: #e2e8f0;
+  background: #e1e6ef;
   padding: 0;
   cursor: pointer;
   transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 .rev-dot--active {
-  width: 28px;           /* w-7 */
-  background: #00a3e0;
+  width: 30px;
+  background: #14aee8;
 }
 
 .rev-dot:not(.rev-dot--active):hover {
@@ -271,7 +285,7 @@
 /* ─── Mobile Nav ───────────────────────────────────────────────── */
 
 .rev-mobile-nav {
-  gap: 1.5rem;           /* gap-6 */
+  gap: 1.5rem;
 }
 
 /* ─── Slide-in Fade Animation ──────────────────────────────────── */
@@ -281,6 +295,7 @@
     opacity: 0;
     transform: translateY(6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -289,4 +304,63 @@
 
 .testimonial-fade {
   animation: rev-fade-in 0.35s ease both;
+}
+
+/* ─── Mobile: bigger arrows and dots on same line ───────────────── */
+
+@media (max-width: 1023.98px) {
+  .rev-dots {
+    position: relative;
+    z-index: 2;
+    height: 34px;
+    margin-bottom: 0;
+    gap: 10px;
+  }
+
+  .rev-mobile-nav {
+    position: relative;
+    z-index: 1;
+    width: 205px;
+    height: 34px;
+    margin-top: -34px;
+    margin-bottom: 1.5rem;
+    gap: 0;
+    justify-content: space-between !important;
+    pointer-events: none;
+  }
+
+  .rev-mobile-nav .rev-nav-btn {
+    pointer-events: auto;
+  }
+}
+
+/* ─── Small Mobile Tweaks ──────────────────────────────────────── */
+
+@media (max-width: 575.98px) {
+  .rev-section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .rev-heading {
+    font-size: 1.5rem;
+  }
+
+  .rev-carousel-row {
+    min-height: 130px;
+    margin-bottom: 1.25rem;
+  }
+
+  .rev-text {
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+
+  .rev-author {
+    margin-bottom: 1.75rem;
+  }
+
+ .rev-mobile-nav {
+  width: 205px;
+}
 }
