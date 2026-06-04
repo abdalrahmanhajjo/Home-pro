@@ -19,16 +19,23 @@
   height: 836px;
   object-fit: cover;
   border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
 }
 
 .hero-image-left {
   left: 16px;
   object-position: center;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  z-index: 2;
 }
 
 .hero-image-right {
   right: 16px;
   object-position: center;
+  border-bottom-left-radius: 0;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  z-index: 2;
 }
 
 .hero-content {
