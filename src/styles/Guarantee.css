@@ -12,26 +12,49 @@
   border-radius: 22px;
   background: var(--dark-blue);
   color: #fff;
+  overflow: hidden;
 }
 
+/* Left and right white middle cuts */
 .guarantee-box::before,
 .guarantee-box::after {
   content: "";
   position: absolute;
-  top: 130px;
-  width: 32px;
+  top: 50%;
+  width: 34px;
   height: 350px;
   background: #fff;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
 }
 
+/* Left white cut */
 .guarantee-box::before {
   left: 0;
-  clip-path: polygon(0 0, 100% 35px, 100% calc(100% - 35px), 0 100%);
+  clip-path: polygon(
+    0 0,
+    100% 35px,
+    100% calc(100% - 35px),
+    0 100%
+  );
 }
 
+/* Right white cut - no outer border line */
 .guarantee-box::after {
-  right: 0;
-  clip-path: polygon(100% 0, 0 35px, 0 calc(100% - 35px), 100% 100%);
+  right: -1px;
+  clip-path: polygon(
+    100% 0,
+    0 35px,
+    0 calc(100% - 35px),
+    100% 100%
+  );
+}
+
+/* Keep all content above the side cuts */
+.guarantee-box > * {
+  position: relative;
+  z-index: 2;
 }
 
 .guarantee-intro,
@@ -59,6 +82,10 @@
   font-weight: 800;
 }
 
+.benefit p {
+  margin-bottom: 0;
+}
+
 .cal-clock {
   position: relative;
   display: inline-block;
@@ -74,44 +101,68 @@
   box-shadow: 0 0 0 2px var(--dark-blue);
 }
 
+/* Large tablets */
 @media (max-width: 1199.98px) {
-.guarantee-box::before,
+  .guarantee-box::before,
   .guarantee-box::after {
     display: none;
   }
 }
 
+/* Tablets */
 @media (max-width: 991.98px) {
-.benefit {
+  .benefit {
     grid-template-columns: 62px 1fr;
     gap: 22px;
   }
 }
 
+/* Phones */
 @media (max-width: 767.98px) {
-.guarantee-section {
+  .guarantee-section {
     padding-inline: 22px;
   }
-.benefit {
+
+  .guarantee-box {
+    padding: 44px 24px 58px;
+  }
+
+  .benefit {
     grid-template-columns: 1fr;
     justify-items: center;
     gap: 16px;
     text-align: center;
   }
-.benefit span {
+
+  .benefit span {
     font-size: 46px;
   }
-.guarantee-box .row {
+
+  .benefit h3 {
+    font-size: 23px;
+  }
+
+  .benefit p {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .guarantee-box .row {
     text-align: center;
   }
-.guarantee-box .border-bottom {
+
+  .guarantee-box .border-bottom {
     border-bottom: 0 !important;
     padding-bottom: 0 !important;
   }
-.guarantee-intro {
+
+  .guarantee-intro {
     margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.6;
   }
-.guarantee-box .row.g-5 {
+
+  .guarantee-box .row.g-5 {
     row-gap: 56px !important;
   }
 }
