@@ -10,7 +10,7 @@
   right: 0;
   left: 0;
   height: 68px;
-  background: transparent; /* SVG handles the fill + rounded corners */
+  background: transparent;
   z-index: 3;
 }
 
@@ -74,11 +74,13 @@
     width: 244px;
     height: 22px;
     background: #fff;
-    clip-path: path("M 0 0 L 244 0 L 218.7 19 Q 214.7 22 209.7 22 L 34.3 22 Q 29.3 22 25.3 19 Z");
+    clip-path: path(
+      "M 0 0 L 244 0 L 218.7 19 Q 214.7 22 209.7 22 L 34.3 22 Q 29.3 22 25.3 19 Z"
+    );
   }
 
   .cta-notch-svg {
-    display: none; /* mobile uses clip-path on the element itself */
+    display: none;
   }
 
   .cta-content {
@@ -157,16 +159,24 @@
 
   .cta-image {
     display: block !important;
+
+    /*
+      Use the mobile image where the house already has the correct dark-blue color.
+      CSS cannot color only the house if the worker and house are inside one PNG.
+    */
     content: url("/images/cta-worker-house-phone.png");
+
     position: absolute;
     width: 392px;
     max-width: none;
     height: auto;
-    left: 50%;
+    left: -48px;
     right: auto;
     bottom: 0;
-    transform: translateX(-50%);
+    transform: none;
     opacity: 1;
+    z-index: 1;
+    filter: none;
   }
 }
 
@@ -177,12 +187,27 @@
   }
 
   .cta-image {
-    width: 470px;
+    width: 500px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-58%);
   }
-  
 }
 
 /* Small phones */
+@media (max-width: 480px) {
+  .cta-section {
+    min-height: 628px;
+  }
+
+  .cta-image {
+    width: 392px;
+    left: -48px;
+    bottom: 0;
+  }
+}
+
+/* Extra small phones */
 @media (max-width: 374.98px) {
   .cta-section {
     min-height: 628px;
@@ -204,5 +229,7 @@
 
   .cta-image {
     width: 382px;
+    left: -56px;
+    bottom: 0;
   }
 }
