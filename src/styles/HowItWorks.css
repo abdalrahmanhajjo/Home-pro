@@ -1,62 +1,45 @@
-/*
-  HowItWorks — pixel-matched to Home_Services-main/HowItWorks.jsx (Tailwind reference).
-
-  Tailwind mobile overrides (from the inline <style> block at max-width: 1279px):
-    .works-artwork-col  → height:auto; width:100%; max-width:340px; aspect-ratio:1/1.1; margin:0 auto
-    .works-mask-frame   → width:88%; height:82%; border-radius:24px; border-top-right-radius:96px;
-                          position:absolute; bottom:0; right:0
-    .works-worker-overlay → width:100%; height:auto; position:absolute; bottom:0; left:-3%
-
-  Tailwind desktop (xl 1280px+):
-    artwork col  → col-span-5, flex, justify-center, items-center, h-[480px]
-    frame        → relative, w-[490px], h-[470px], rounded-[24px], rounded-tr-[140px],
-                   overflow-hidden, shadow-sm, bg-slate-50, my-auto
-    badge        → absolute, top-[28%], right-[70px], w-[90px], h-[90px], z-20, drop-shadow-md
-    worker       → absolute, bottom-[15px], left-[-55px], w-[515px], h-[423px], z-10
-*/
-
 /* ─── Section ──────────────────────────────────────────────────── */
 
 .how-section {
   background: #fff;
-  padding-top: 4rem;      /* py-16 */
+  padding-top: 4rem;
   padding-bottom: 4rem;
-  padding-left: 1.25rem;  /* px-5  */
+  padding-left: 1.25rem;
   padding-right: 1.25rem;
   user-select: none;
 }
 
 @media (min-width: 640px) {
   .how-section {
-    padding-left: 2rem;   /* sm:px-8 */
+    padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 
 @media (min-width: 768px) {
   .how-section {
-    padding-left: 3rem;   /* md:px-12 */
+    padding-left: 3rem;
     padding-right: 3rem;
   }
 }
 
 @media (min-width: 1024px) {
   .how-section {
-    padding-top: 5rem;    /* lg:py-20 */
+    padding-top: 5rem;
     padding-bottom: 5rem;
-    padding-left: 4rem;   /* lg:px-16 */
+    padding-left: 4rem;
     padding-right: 4rem;
   }
 }
 
 @media (min-width: 1280px) {
   .how-section {
-    padding-left: 6rem;   /* xl:px-24 */
+    padding-left: 6rem;
     padding-right: 6rem;
   }
 }
 
-/* ─── Inner container (max-w-[1280px] mx-auto) ─────────────────── */
+/* ─── Inner container ───────────────────────────────────────────── */
 
 .how-inner {
   max-width: 1280px;
@@ -64,25 +47,21 @@
   margin: 0 auto;
 }
 
-/* ─── Artwork outer col — gap when stacked below xl ───────────── */
+/* ─── Artwork outer col ─────────────────────────────────────────── */
 
 .how-artwork-outer {
-  margin-bottom: 2.5rem; /* gap-10 = 2.5rem (flex gap below xl) */
+  margin-bottom: 2.5rem;
 }
 
 @media (min-width: 1280px) {
   .how-artwork-outer { margin-bottom: 0; }
 }
 
-/* ─── Artwork col (works-artwork-col) ─────────────────────────── */
+/* ─── Artwork col ───────────────────────────────────────────────── */
 
-/*
-  Mobile (<1280px): aspect-ratio box, max 340px wide, centred in outer col.
-  Matches the Tailwind inline <style> block overrides.
-*/
 .works-artwork-col {
   position: relative;
-  overflow: visible; /* arm must extend left of the frame freely */
+  overflow: visible;
   width: 100%;
   max-width: 340px;
   aspect-ratio: 1 / 1.1;
@@ -92,7 +71,6 @@
 
 @media (min-width: 1280px) {
   .works-artwork-col {
-    /* visible at xl: the worker must overflow 55 px to the left */
     overflow: visible;
     max-width: none;
     width: 100%;
@@ -106,13 +84,8 @@
   }
 }
 
-/* ─── Shaped frame (works-mask-frame) ─────────────────────────── */
+/* ─── Shaped frame ──────────────────────────────────────────────── */
 
-/*
-  Mobile: absolutely positioned, bottom-right of the artwork col.
-  Matches Tailwind inline <style>: position:absolute; bottom:0; right:0;
-  width:88%; height:82%; border-radius:24px; border-top-right-radius:96px
-*/
 .works-mask-frame {
   position: absolute;
   bottom: 0;
@@ -129,11 +102,6 @@
      paints above the worker (z-index:10 sibling) as intended */
 }
 
-/*
-  xl: in normal flow, centred by the flex parent above.
-  Matches Tailwind: relative w-[490px] h-[470px] rounded-[24px] rounded-tr-[140px]
-                    overflow-hidden shadow-sm bg-slate-50 my-auto
-*/
 @media (min-width: 1280px) {
   .works-mask-frame {
     position: relative;
@@ -143,7 +111,7 @@
     height: 470px;
     border-radius: 24px;
     border-top-right-radius: 140px;
-    margin: auto;   /* my-auto — centres vertically inside the flex col */
+    margin: auto;
   }
 }
 
@@ -153,28 +121,23 @@
   object-fit: cover;
 }
 
-/* ─── Verified badge (works-badge-wrap) ───────────────────────── */
+/* ─── Verified badge ────────────────────────────────────────────── */
 
-/*
-  Positioned inside the frame (overflow:hidden clips it to the frame boundary).
-  Mobile: right-[60px] w-[80px] h-[80px]  (Tailwind default, non-xl)
-  xl:    right-[70px] w-[90px] h-[90px]  (xl: override)
-*/
 .works-badge-wrap {
   position: absolute;
-  top: 28%;           /* top-[28%] */
+  top: 28%;
   right: 30px;
-  width: 80px;        /* w-[80px] */
-  height: 80px;       /* h-[80px] */
+  width: 80px;
+  height: 80px;
   z-index: 20;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.07)); /* drop-shadow-md */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.07));
 }
 
 @media (min-width: 1280px) {
   .works-badge-wrap {
-    right: 70px;      /* xl:right-[70px] */
-    width: 90px;      /* xl:w-[90px] */
-    height: 90px;     /* xl:h-[90px] */
+    right: 70px;
+    width: 90px;
+    height: 90px;
   }
 }
 
@@ -184,19 +147,14 @@
   object-fit: contain;
 }
 
-/* ─── Worker image (works-worker-overlay) ─────────────────────── */
+/* ─── Worker image ──────────────────────────────────────────────── */
 
-/*
-  Mobile: Tailwind inline <style>: width:100%; height:auto;
-  position:absolute; bottom:0; left:-3%
-*/
 .works-worker-overlay {
   position: absolute;
   z-index: 10;
   pointer-events: none;
   object-fit: contain;
   /*
-    Exact Tailwind mobile values:  width:100%  bottom:0  left:-3%
     The arm extends naturally to the left (overflow:visible on parent).
     clip-path trims only the thin blue splash at the bottom of Worker.png
     (~6% = ~17 px at mobile) without visually "cutting" the body.
@@ -222,124 +180,124 @@
   }
 }
 
-/* ─── Content outer col ────────────────────────────────────────── */
+/* ─── Content outer col ─────────────────────────────────────────── */
 
 .how-content-outer {
   display: flex;
-  justify-content: center; /* mx-auto equivalent for the inner block */
+  justify-content: center;
 }
 
 @media (min-width: 1280px) {
   .how-content-outer {
-    justify-content: flex-start; /* xl:mx-0 */
+    justify-content: flex-start;
   }
 }
 
-/* ─── Content inner (heading + steps) ─────────────────────────── */
+/* ─── Content inner ─────────────────────────────────────────────── */
 
 .how-content {
   width: 100%;
-  max-width: 660px;           /* max-w-[660px] */
+  max-width: 660px;
   display: flex;
   flex-direction: column;
-  text-align: center;         /* text-center */
-  align-items: center;        /* items-center */
+  text-align: center;
+  align-items: center;
 }
 
 @media (min-width: 1024px) {
   .how-content {
-    text-align: left;         /* lg:text-left  */
-    align-items: flex-start;  /* lg:items-start */
+    text-align: left;
+    align-items: flex-start;
   }
 }
 
 @media (min-width: 1280px) {
   .how-content {
-    padding-left: 1.5rem;     /* xl:pl-6 */
+    padding-left: 1.5rem;
     max-width: none;
   }
 }
 
-/* ─── Heading ──────────────────────────────────────────────────── */
+/* ─── Heading ───────────────────────────────────────────────────── */
 
 .how-title {
-  font-size: 1.75rem;         /* text-[28px] */
+  font-size: 1.75rem;
   font-weight: 700;
-  color: #0f172a;             /* text-[#0F172A] */
-  line-height: 1.25;          /* leading-tight */
-  letter-spacing: -0.025em;   /* tracking-tight */
-  margin-bottom: 2rem;        /* mb-8 */
+  color: #0f172a;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  margin-bottom: 2rem;
 }
 
-@media (min-width: 640px)  { .how-title { font-size: 2rem; } }        /* sm:text-[32px] */
+@media (min-width: 640px)  { .how-title { font-size: 2rem; } }
 @media (min-width: 768px)  {
-  .how-title { font-size: 2.25rem; margin-bottom: 2.5rem; }           /* md:text-[36px] md:mb-10 */
+  .how-title { font-size: 2.25rem; margin-bottom: 2.5rem; }
 }
-@media (min-width: 1024px) { .how-title { font-size: 2.625rem; } }    /* lg:text-[42px] */
-@media (min-width: 1280px) { .how-title { margin-bottom: 3rem; } }    /* xl:mb-12 */
+@media (min-width: 1024px) { .how-title { font-size: 2.625rem; } }
+@media (min-width: 1280px) { .how-title { margin-bottom: 3rem; } }
 
-/* ─── Steps container ──────────────────────────────────────────── */
+/* ─── Steps container ───────────────────────────────────────────── */
 
 .how-steps {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;    /* gap-7 */
+  gap: 1.75rem;
   width: 100%;
 }
 
-@media (min-width: 768px) { .how-steps { gap: 2rem; } }               /* md:gap-8 */
+@media (min-width: 768px) { .how-steps { gap: 2rem; } }
 
-/* ─── Individual step ──────────────────────────────────────────── */
+/* ─── Individual step ───────────────────────────────────────────── */
 
 .how-step {
   display: flex;
-  align-items: flex-start;  /* items-start */
-  gap: 1rem;                /* gap-4 */
+  align-items: flex-start;
+  gap: 1rem;
   width: 100%;
-  text-align: left;         /* text-left */
+  text-align: left;
 }
 
-/* ─── Step number ──────────────────────────────────────────────── */
+/* ─── Step number ───────────────────────────────────────────────── */
 
 .step-number {
-  font-size: 1.75rem;       /* text-[28px] */
+  font-size: 1.75rem;
   font-weight: 700;
-  color: #94a3b8;           /* text-[#94A3B8] */
-  line-height: 1;           /* leading-none */
-  padding-top: 0.125rem;    /* pt-0.5 */
+  color: #94a3b8;
+  line-height: 1;
+  padding-top: 0.125rem;
   flex-shrink: 0;
-  width: 1.75rem;           /* w-7 */
+  width: 1.75rem;
 }
 
-@media (min-width: 1024px) { .step-number { font-size: 2rem; } }      /* lg:text-[32px] */
+@media (min-width: 1024px) { .step-number { font-size: 2rem; } }
 
-/* ─── Step body (title + description) ─────────────────────────── */
+/* ─── Step body ─────────────────────────────────────────────────── */
 
 .step-body {
-  padding-top: 0.25rem;     /* pt-1 */
+  padding-top: 0.25rem;
   width: 100%;
 }
 
-/* ─── Step title ───────────────────────────────────────────────── */
+/* ─── Step title ────────────────────────────────────────────────── */
 
 .step-title {
-  font-size: 1rem;          /* text-[16px] */
+  font-size: 1rem;
   font-weight: 700;
-  color: #1e293b;           /* text-[#1E293B] */
-  line-height: 1.375;       /* leading-snug */
-  letter-spacing: -0.025em; /* tracking-tight */
-  margin-bottom: 0.25rem;   /* mb-1 */
+  color: #1e293b;
+  line-height: 1.375;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.25rem;
 }
 
-@media (min-width: 768px)  { .step-title { margin-bottom: 0; } }      /* md:mb-0 */
-@media (min-width: 1024px) { .step-title { font-size: 1.125rem; } }   /* lg:text-[18px] */
+@media (min-width: 768px)  { .step-title { margin-bottom: 0; } }
+@media (min-width: 1024px) { .step-title { font-size: 1.125rem; } }
 
-/* ─── Step description ─────────────────────────────────────────── */
+/* ─── Step description ──────────────────────────────────────────── */
 
 .step-desc {
-  color: rgba(100, 116, 139, 0.9); /* text-slate-500/90 */
-  font-size: 0.875rem;              /* text-sm = 14px */
-  line-height: 1.625;               /* leading-relaxed */
+  color: rgba(100, 116, 139, 0.9);
+  font-size: 0.875rem;
+  line-height: 1.625;
 }
 
-@media (min-width: 1024px) { .step-desc { font-size: 0.9375rem; } }   /* lg:text-[15px] */
+@media (min-width: 1024px) { .step-desc { font-size: 0.9375rem; } }
