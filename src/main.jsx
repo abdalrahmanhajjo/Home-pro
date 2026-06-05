@@ -6,6 +6,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Shared/global styles (reset, CSS variables, icons, shared utilities)
 import "./styles/global.css";
 
+// Scale the desktop layout to fit laptop screens (see scale.js)
+import "./scale.js";
+
 import App from "./App.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

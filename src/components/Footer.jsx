@@ -10,10 +10,11 @@ export default function Footer() {
         {/* Newsletter card */}
         <div className="newsletter-card d-flex flex-column flex-lg-row align-items-center justify-content-between">
 
-          <div className="text-center text-lg-start">
-            <h3 className="newsletter-title mb-2">Stay Connected with Our Newsletter</h3>
-            <p className="newsletter-subtitle mb-0">Subscribe for news, promos, and new services</p>
-          </div>
+          {/* Replace the existing div for the newsletter text with this: */}
+<div className="text-start">
+  <h3 className="newsletter-title mb-2">Stay Connected with Our Newsletter</h3>
+  <p className="newsletter-subtitle mb-0">Subscribe for news, promos, and new services</p>
+</div>
 
           <form className="newsletter-input-group d-flex align-items-center" onSubmit={(e) => e.preventDefault()}>
             <input
@@ -30,7 +31,11 @@ export default function Footer() {
 
           {/* Brand column */}
           <div className="col-md-6 d-flex flex-column align-items-start">
-            <img src="/images/logo.png" alt="HomePro Logo" className="footer-logo mb-4" />
+            <a className="navbar-brand brand m-0" href="#" onClick={(e) => e.preventDefault()}>
+              <img src="/images/logo.png" alt="HomePro Logo" className="footer-logo" />
+              HomePro
+            </a>
+            <br />
             <p className="footer-desc mb-4 mb-sm-5">
               Home Pro is your premier destination for top-notch smart home service and repair.
             </p>

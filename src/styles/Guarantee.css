@@ -1,14 +1,14 @@
 /* Guarantee section styles */
 
 .guarantee-section {
-  padding: 0 60px clamp(80px, 8vw, 160px);
+  padding: 0 60px clamp(80px, calc(8 * var(--vw)), 160px);
 }
 
 .guarantee-box {
   position: relative;
   max-width: 1780px;
   margin-inline: auto;
-  padding: clamp(44px, 5vw, 75px) clamp(26px, 9vw, 180px);
+  padding: clamp(44px, calc(5 * var(--vw)), 75px) clamp(26px, calc(9 * var(--vw)), 180px);
   border-radius: 22px;
   background: var(--dark-blue);
   color: #fff;

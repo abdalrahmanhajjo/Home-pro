@@ -3,6 +3,8 @@
 .services-section {
   padding-top: 70px;
   padding-bottom: 90px;
+  padding-left: 36px;
+  padding-right: 36px;
 }
 
 .services-section .container-xxl {
@@ -14,7 +16,7 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-size: clamp(40px, 3vw, 52px);
+  font-size: clamp(40px, calc(3 * var(--vw)), 52px);
   line-height: 1.15;
   letter-spacing: -1.4px;
 }

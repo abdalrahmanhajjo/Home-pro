@@ -38,7 +38,7 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
   .faq-section {
     padding-left: 6rem;   /* xl:px-24 */
     padding-right: 6rem;

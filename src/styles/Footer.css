@@ -244,21 +244,10 @@
 
 /* ─── Responsive ──────────────────────────────────────────────────── */
 
-@media (max-width: 1399.98px) {
-  .footer-inner {
-    max-width: 1220px;
-  }
-
-  .newsletter-input-group {
-    max-width: 470px;
-  }
-
-  .footer-main > .col-md-6:last-child > .row {
-    column-gap: 64px;
-  }
-}
-
+/* From 1200px up the desktop footer is scaled to fit (see scale.js); below it
+   we fall back to the responsive layout. */
 @media (max-width: 1199.98px) {
+  
   .footer-inner {
     max-width: 980px;
   }
@@ -340,8 +329,9 @@
 }
 
 @media (max-width: 767.98px) {
+  /* Make footer padding more mobile-friendly */
   .footer {
-    padding: 36px 22px 28px;
+    padding: 50px 36px 36px;
   }
 
   .footer-inner {
@@ -381,6 +371,14 @@
     font-size: 14px;
   }
 
+  /* Make sure footer text is left aligned on mobile */
+  .footer-section,
+  .footer-desc,
+  .footer-section ul,
+  .footer-section a {
+    text-align: left;
+  }
+
   .footer-main {
     padding-bottom: 42px;
     text-align: left;
@@ -393,12 +391,6 @@
   .footer-logo {
     height: 34px;
     margin-bottom: 24px !important;
-  }
-
-  .footer-desc {
-    max-width: 100%;
-    font-size: 16px;
-    margin-bottom: 26px !important;
   }
 
   .social-links {
@@ -426,10 +418,6 @@
     margin-bottom: 18px;
   }
 
-  .footer-section ul {
-    gap: 16px;
-  }
-
   .footer-section a {
     font-size: 16px;
   }
@@ -444,6 +432,8 @@
 }
 
 @media (max-width: 374.98px) {
+  
+  /* Make input fields full width and center text if needed */
   .newsletter-input-group {
     height: auto;
     flex-direction: column;
@@ -462,7 +452,22 @@
     width: 100%;
   }
 
+  /* Make sure footer text is left aligned on very small screens */
+  .footer-section,
+  .footer-desc,
+  .footer-section ul,
   .footer-section a {
-    font-size: 15px;
+    text-align: left;
+  }
+}
+@media (max-width: 991.98px) {
+  /* Override the previous text-align: center */
+  .newsletter-card {
+    text-align: left;
+  }
+  
+  /* Ensure the internal container is also aligned left */
+  .newsletter-card > div:first-child {
+    text-align: left !important;
   }
 }

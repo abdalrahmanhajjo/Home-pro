@@ -1,7 +1,10 @@
 /* About section styles */
 
 .about-section {
-  padding-top: clamp(90px, 12vw, 235px);
+  padding-top: clamp(90px, calc(12 * var(--vw)), 235px);
+padding-left: 36px;
+padding-right: 36px;
+padding-bottom: 36px;
 }
 
 .check-list {
@@ -112,3 +115,4 @@
     height: 310px;
   }
 }
+

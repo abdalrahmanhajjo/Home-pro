@@ -120,13 +120,13 @@ img {
 }
 
 .section {
-  padding-block: clamp(80px, 8vw, 160px);
+  padding-block: clamp(80px, calc(8 * var(--vw)), 160px);
 }
 
 .section-title {
   max-width: 760px;
   margin: 0;
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-size: clamp(2rem, calc(4.5 * var(--vw)), 3.5rem);
   font-weight: 800;
   line-height: 1.18;
   letter-spacing: -1.35px;
@@ -135,7 +135,7 @@ img {
 .section-text {
   max-width: 700px;
   color: var(--text-muted);
-  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  font-size: clamp(1.05rem, calc(1.5 * var(--vw)), 1.25rem);
   line-height: 1.55;
 }
 
@@ -209,4 +209,47 @@ img {
     height: 44px;
     font-size: 16px;
   }
+}
+
+/* ───────────────────────────────────────────────────────────────────
+   Laptop scaling
+   On laptops (viewport between --scale-min and --design-width) we render
+   the full desktop layout at a fixed design width and uniformly shrink the
+   whole page with `zoom`, so every section looks identical to the desktop
+   — just proportionally smaller. The zoom factor itself is set in JS
+   (see src/scale.js). `zoom` (unlike transform: scale) keeps the fixed
+   navbar working and does not create a new containing block.
+   Tune the look by changing --design-width (smaller = larger on laptops).
+   ─────────────────────────────────────────────────────────────────── */
+:root {
+  --design-width: 1920px;
+  /* 1vw natively; pinned to the design width while scaling so that vw-based
+     sizing (hero images, fluid font sizes, section padding) lays out exactly
+     like the desktop instead of following the real window width. Source `vw`
+     units are written as calc(N * var(--vw)). */
+  --vw: 1vw;
+}
+
+html.is-scaled {
+  overflow-x: hidden;
+  --vw: calc(var(--design-width) / 100);
+}
+
+/* Lay the page out at the design width; JS scales it down to fit. */
+html.is-scaled body {
+  width: var(--design-width);
+  overflow-x: hidden;
+}
+
+/* The fixed navbar is positioned against the viewport, not the body, so we
+   give it the same design width (left-anchored) to keep it in sync. */
+html.is-scaled .site-navbar {
+  width: var(--design-width);
+  right: auto;
+}
+
+/* Full-bleed footer divider uses 100vw; pin it to the design width instead
+   so it still reaches both edges once the page is scaled. */
+html.is-scaled .footer-divider {
+  width: var(--design-width);
 }
